@@ -12,5 +12,5 @@ having issue with the incorrect binary or executable version, and you must ensur
 * go mod tidy
 * GOARCH=amd64 GOOS=linux go build main.go
 * zip function.zip main
-* aws lambda create-function --function-name (attach func name without bracket) --runtime go1.x --role arn:aws:iam::635281925770:role/lambda-2 --handler main --zip-file fileb://function.zip
+* aws lambda create-function --function-name (attach func name without bracket) --runtime go1.x --role arn:aws:iam::635281925770:role/lambda-2 --handler main --zip-file fileb://function.zip (and most importantly you need to write the go version here also)
 * aws lambda invoke --function-name (your function name without bracket) --cli-binary-format raw-in-base64-out --payload '{"What is your name?": "kim", "How old are you?": "20"}' output.txt
